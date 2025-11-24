@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusBank AI | Premium Loan Processing</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="page active">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <div class="logo-icon">🏦</div>
+                    <span class="logo-text">NexusBank AI</span>
+                </div>
+                <div class="nav-actions">
+                    <button class="nav-btn secondary">Sign In</button>
+                    <button class="nav-btn primary" onclick="showChatInterface()">Start Application</button>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="badge">
+                        <i class="fas fa-star"></i>
+                        <span>AI-Powered Banking</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Intelligent Loan
+                        <span class="gradient-text">Processing</span>
+                        Reimagined
+                    </h1>
+                    <p class="hero-description">
+                        Experience the future of banking with our AI-driven loan application system. 
+                        Get instant eligibility checks, real-time underwriting, and seamless document verification.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Approval Rate</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">AI Support</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">5min</div>
+                            <div class="stat-label">Average Processing</div>
+                        </div>
+                    </div>
+                    <button class="cta-button" onclick="showChatInterface()">
+                        <span>Start Your Application</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="hero-visual">
+                    <div class="visual-card">
+                        <div class="card-header">
+                            <div class="card-avatar">AB</div>
+                            <div class="card-info">
+                                <div class="card-name">Alex Bennett</div>
+                                <div class="card-status eligible">Eligible</div>
+                            </div>
+                        </div>
+                        <div class="card-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                            <div class="progress-text">75% Complete</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Chat Interface -->
+    <div id="chat-interface" class="page">
+        <div class="app-container">
+            <!-- Left Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <div class="app-logo">
+                        <div class="logo-icon">🏦</div>
+                        <span class="logo-text">NexusBank</span>
+                    </div>
+                    <button class="sidebar-toggle" onclick="toggleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-item active" onclick="setActiveNav(this)">
+                        <i class="fas fa-comments"></i>
+                        <span>Application Chat</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="setActiveNav(this)">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="setActiveNav(this)">
+                        <i class="fas fa-file-contract"></i>
+                        <span>Documents</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="setActiveNav(this)">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Status</span>
+                    </a>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-profile">
+                        <div class="user-avatar">AB</div>
+                        <div class="user-info">
+                            <div class="user-name">Alex Bennett</div>
+                            <div class="user-status">Premium Client</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Chat Area -->
+            <div class="main-content">
+                <div class="chat-header">
+                    <div class="chat-info">
+                        <h2>Loan Application Assistant</h2>
+                        <div class="chat-status">
+                            <i class="fas fa-circle online"></i>
+                            <span>AI Assistant is online</span>
+                        </div>
+                    </div>
+                    <div class="header-actions">
+                        <button class="icon-btn" onclick="toggleTheme()">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button class="icon-btn" onclick="resetApplication()">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="chat-container">
+                    <!-- Progress Bar -->
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="step active" id="step1">1. Information</div>
+                            <div class="step" id="step2">2. Underwriting</div>
+                            <div class="step" id="step3">3. Documents</div>
+                            <div class="step" id="step4">4. Approval</div>
+                        </div>
+                    </div>
+
+                    <div id="chat-messages" class="chat-messages">
+                        <!-- Messages will be inserted here by JavaScript -->
+                    </div>
+
+                    <div id="typing-indicator" class="typing-indicator">
+                        <div class="typing-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span>AI Assistant is typing...</span>
+                    </div>
+
+                    <div class="chat-input-container">
+                        <button class="attachment-btn">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <input type="text" id="user-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+                        <button class="send-btn" onclick="sendMessage()">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Info Panel -->
+            <div class="info-panel">
+                <div class="panel-header">
+                    <h3>Application Overview</h3>
+                    <button class="panel-toggle" onclick="toggleInfoPanel()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="panel-content">
+                    <!-- Dynamic Panels (Same as original functionality) -->
+                    <div id="welcome-panel" class="panel active">
+                        <h2>Welcome to Loan Processing</h2>
+                        <p>Start by chatting with our AI agent to provide your loan application details.</p>
+                        <div class="info-card">
+                            <h3>📋 Information We'll Collect:</h3>
+                            <ul>
+                                <li>Full Name</li>
+                                <li>Age</li>
+                                <li>Monthly Salary</li>
+                                <li>Loan Amount Required</li>
+                                <li>Credit Score</li>
+                                <li>Employment Type</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="underwriting-panel" class="panel">
+                        <h2>📊 Underwriting Results</h2>
+                        <div id="underwriting-result"></div>
+                        <div id="next-steps"></div>
+                    </div>
+
+                    <div id="document-panel" class="panel">
+                        <h2>📄 Document Verification</h2>
+                        <p>Please upload the required documents for verification:</p>
+                        
+                        <div class="document-upload-area">
+                            <div class="doc-type">
+                                <label>📷 Aadhaar Card</label>
+                                <input type="file" id="aadhaar-file" accept="image/*,.pdf">
+                                <button onclick="uploadDocument('aadhaar')">Upload Aadhaar</button>
+                                <span id="aadhaar-status" class="status"></span>
+                            </div>
+                            
+                            <div class="doc-type">
+                                <label>💳 PAN Card</label>
+                                <input type="file" id="pan-file" accept="image/*,.pdf">
+                                <button onclick="uploadDocument('pan')">Upload PAN</button>
+                                <span id="pan-status" class="status"></span>
+                            </div>
+                            
+                            <div class="doc-type">
+                                <label>💰 Salary Slip</label>
+                                <input type="file" id="salary_slip-file" accept="image/*,.pdf">
+                                <button onclick="uploadDocument('salary_slip')">Upload Salary Slip</button>
+                                <span id="salary_slip-status" class="status"></span>
+                            </div>
+                        </div>
+
+                        <div id="document-results"></div>
+                        
+                        <div class="completion-section">
+                            <button id="submit-all-docs" onclick="submitAllDocuments()" disabled>Submit All Documents for Final Approval</button>
+                        </div>
+                    </div>
+
+                    <div id="approval-panel" class="panel">
+                        <h2>✅ Application Complete</h2>
+                        <div id="final-result"></div>
+                    </div>
+
+                    <div id="rejection-panel" class="panel">
+                        <h2>❌ Application Not Eligible</h2>
+                        <div id="rejection-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
