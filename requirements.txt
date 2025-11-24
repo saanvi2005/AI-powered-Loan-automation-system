@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+langchain
+requests
+sqlalchemy
+pydantic
+reportlab
+pytesseract
+easyocr
+opencv-python-headless
