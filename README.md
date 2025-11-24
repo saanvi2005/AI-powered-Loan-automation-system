@@ -103,6 +103,5 @@ The frontend is a single-page application built with HTML, CSS, and JavaScript, 
 - Document verification uses OCR libraries (pytesseract, easyocr) to validate uploaded identity and salary documents.
 - The system is designed to be extensible for real-world loan application workflows.
 
----
 
-Thank you for choosing NexusBank AI!
+
